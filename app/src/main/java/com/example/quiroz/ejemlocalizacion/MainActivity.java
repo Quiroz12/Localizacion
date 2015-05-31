@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-
+//declarando botonos y textview
     private Button btnActualizar;
     private Button btnDesactivar;
     private TextView lblLatitud;
@@ -29,14 +29,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//enlazando datos
         btnActualizar = (Button)findViewById(R.id.BtnActualizar);
         btnDesactivar = (Button)findViewById(R.id.BtnDesactivar);
         lblLatitud = (TextView)findViewById(R.id.LblPosLatitud);
         lblLongitud = (TextView)findViewById(R.id.LblPosLongitud);
         lblPrecision = (TextView)findViewById(R.id.LblPosPrecision);
         lblEstado = (TextView)findViewById(R.id.LblEstado);
-
+//llamando al metodo actualizar posicion
         btnActualizar.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +86,7 @@ public class MainActivity extends Activity {
                 LocationManager.GPS_PROVIDER, 15000, 0, locationListener);
 
     }
-
+//metodo que recoje datos de la posicion mostrando la latitud y la longitud
     private void muestraPosicion(Location loc) {
         if(loc != null)
         {
